@@ -58,6 +58,9 @@ The application uses the following components:
 1. Verify that your netlify command line is authenticated against your account.
 ```
 netlify site:create
+netlify build
+import .env
+netlify env:import
 netlify deploy --prod
 ```
     
