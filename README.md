@@ -59,9 +59,9 @@ The application uses the following components:
 ```
 netlify site:create
 netlify build
-import .env
+## import .env
 netlify env:import
-netlify deploy --prod
+netlify deploy 
 ```
     
 
@@ -89,6 +89,10 @@ You can also update the application logic, components, and API calls to match yo
 
 ## Deploying to Production
 
-To deploy your application, you can use a platform like Vercel or Netlify. Both platforms offer seamless integration with Next.js and support environment variables, which are required to store your OpenAI API key securely. Follow the documentation provided by your chosen platform to deploy the application.
+Use netlify CLI to publish to prod:
+```
+netlify deploy --prod
+```
+
 
 If you have any questions or need further assistance, don't hesitate to create a GitHub issue!
