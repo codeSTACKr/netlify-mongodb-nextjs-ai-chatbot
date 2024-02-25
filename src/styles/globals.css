@@ -1,0 +1,79 @@
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(-10px);
+    background: #818cf8;
+  }
+  20% {
+    transform: translateY(0px);
+  }
+}
+
+.loader span {
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 150ms;
+}
+
+.chat-area{
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 80vh;
+  width: 100%;
+  padding: 24px;
+}
+
+.main-chat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+.message{
+  white-space: pre-wrap;
+  
+
+}
+
+@media screen and (max-width: 768px) {
+  .main-chat{
+    flex-direction: column;
+  }
+  .searchConversation{
+    display: none;
+  }
+  
+}
+.historyMessage{
+  border-bottom: 1px solid black;
+  padding: 16px;
+  cursor: pointer;
+  
+}
+
+ /* use color primary 50  */
+.historyMessage:hover{
+  background-color: #E3FCF7
+}
+
+.conversationHistory {
+  width :30vw;
+ /* shadow */
+  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); */
+  padding: 16px;
+  height: 100%;
+  overflow-y: scroll;
+  /* background-color: #F3F4F6; */
+  border-right: 1px solid black;
+}

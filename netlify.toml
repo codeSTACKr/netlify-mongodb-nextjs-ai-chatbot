@@ -1,0 +1,7 @@
+[build]
+    base = "/Documents/projects/DevRel/projects/AI/templates/netlify-nextjs-mongodb-chatbot"
+    command = "next build"
+    publish = ".next"
+
+[prod]
+    publish = ".next"    
