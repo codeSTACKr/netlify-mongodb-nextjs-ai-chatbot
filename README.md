@@ -1,9 +1,9 @@
-# Next.js ChatGPT Tutorial Documentation
-> Build and customize your own ChatGPT-like web app using Next.js and the OpenAI API. The provided code serves as a foundation, and you can customize it to fit your specific use case. 
-<img alt="Screenshot" src="./public/img/screenshot.jpg" height="75%" width="75%"/>
+# Netlify, Next JS + MongoDB Atlas, powered by Open AI chatbot.
+> Build and customize your own ChatGPT-like web app using Next.js, MongoDB Atlas and the OpenAI API. The provided code serves as a foundation, and you can customize it to fit your specific use case. The chatbot is contextual to your vector store operated by MongoDB, which serves as message and history repository for your chats.
 
-## Tutorial
-You can find a step-by-step tutorial [here](https://www.jakeprins.com/blog/how-to-create-a-chatgpt-application-using-next-js-and-the-openai-api). 
+<img alt="Screenshot" src="./public/img/screenshot.png" height="75%" width="75%"/>
+
+
 
 ## Overview
 
@@ -16,7 +16,24 @@ The application uses the following components:
 - Apideck components for toast notifications and modals
 
 ## Setup MongoDB Atlas
-...
+1. Create or use an existing Atlas Cluster
+- Verify that the IP's are whitelisted
+- You have your connection string and credentials
+2. Import data into the source collection which will be used as a vector store for the RAG of the chatbot. See [guide](src/data_ingestion/INSTALL.md).
+3. Create the Atlas Vector Index named `vector_index` on that collection, example:
+```
+{
+  "fields" : [
+    {
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions" : <NUMBER>, // eg. 384
+      "similarity" : "cosine"
+    }
+  ]
+}
+```
+
 
 ## Getting Started
 
@@ -27,12 +44,22 @@ The application uses the following components:
 3.  Create a `.env.local` file in the project root and add your OpenAI API key:
     ```
     OPENAI_API_KEY=your_openai_api_key
+    MONGODB_ATLAS_URI=your_cluster_connection_string
+    MONGODB_DATABASE=your_source_documents_database
+    MONGODB_SOURCE_COLLECTION=your_embedded_collection
     ```
-4.  Start the development server by running `npm run dev` or `yarn dev`.
+4.  Start the development server by running `netlify dev`.
     
-5.  Open your browser and navigate to `http://localhost:3000` to access the application.
+5.  Open your browser and navigate to `http://localhost:8888` to access the application.
     
 6.  You can now interact with the chatbot using the input field at the bottom of the screen.
+
+## Deploy to netlify
+1. Verify that your netlify command line is authenticated against your account.
+```
+netlify site:create
+netlify deploy --prod
+```
     
 
 ## Customizing the Application
