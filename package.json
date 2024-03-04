@@ -4,10 +4,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:run": "cypress run"
   },
   "dependencies": {
     "@apideck/components": "^0.12.3",
+    "cypress": "^13.6.6",
     "langchain": "^0.1.13",
     "mongodb": "^5.9.2",
     "next": "^13.0.6",
