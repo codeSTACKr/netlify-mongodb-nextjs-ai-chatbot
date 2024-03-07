@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "paths": {
+      "@styles/*": ["./src/styles/*"],
+      "@components/*": ["./src/components/*"]
+    },
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
