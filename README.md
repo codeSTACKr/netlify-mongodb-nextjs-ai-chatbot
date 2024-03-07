@@ -3,7 +3,17 @@
 
 <img alt="Screenshot" src="./public/img/screenshot.png" height="75%" width="75%"/>
 
+## One click deploy
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mongodb-developer/netlify-mongodb-nextjs-ai-chatbot)
+
+During deploy specify the required environment variables:
+```
+    OPENAI_API_KEY=your_openai_api_key
+    MONGODB_ATLAS_URI=your_cluster_connection_string
+    MONGODB_DATABASE=your_source_documents_database
+    MONGODB_SOURCE_COLLECTION=your_embedded_collection
+```
 
 ## Overview
 
